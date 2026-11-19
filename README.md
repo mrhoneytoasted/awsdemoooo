@@ -1,6 +1,6 @@
 # AWS Water Station Dashboard
 
-Next.js App Router dashboard for an automatic water station fleet. The frontend is ready to deploy on Vercel and currently uses demonstration data so the interface can be reviewed before a station API is connected.
+Next.js App Router dashboard for an Adaptive water station fleet. The frontend is ready to deploy on Vercel and currently uses demonstration data so the interface can be reviewed before a station API is connected.
 
 ## Run locally
 
