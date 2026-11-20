@@ -97,6 +97,9 @@ h1 { font-size:22px;letter-spacing:-.035em;margin:0;color:#152d4e;line-height:1.
 .chart-line { stroke:#3378dd;stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round; }
 .chart-point { fill:#fff;stroke:#3378dd;stroke-width:2; }
 .chart-label { fill:#a4afbd;font-size:8px;font-family:inherit; }
+.data-chart { position:relative;min-height:160px;margin-top:10px; }
+.data-chart-svg { height:160px;margin-top:0; }
+.data-chart-empty { position:absolute;inset:0;display:grid;place-items:center;color:#94a1b1;font-size:10px;pointer-events:none; }
 .chart-legend {display:flex;align-items:center;gap:5px;color:#8290a2;font-size:8px;margin-top:5px;}
 .mini-line {width:14px;height:2px;background:#3478dd;border-radius:2px;}
 .bar-chart {height:126px;display:flex;align-items:flex-end;gap:8px;padding:11px 4px 19px;border-bottom:1px solid #edf1f5;margin-top:7px;position:relative;}
