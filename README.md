@@ -19,3 +19,7 @@ Open `http://localhost:3000`. The fleet dashboard is at `/dashboard`; the welcom
 - `/alert` — fleet alert management
 
 Alert edits are stored in browser local storage for this demo. Sensor readings, station inventory, and usage charts are sample data; connect the UI to your API before using it for live operations.
+
+## Cloud telemetry integration
+
+The fleet dashboard reads the latest `test-node-01` telemetry sample every 4 seconds through a same-origin Next.js route handler. The API base URL is set in `src/app/api/telemetry/latest/route.ts`. The displayed `demo_value` is labeled as simulated data and has no unit assigned.

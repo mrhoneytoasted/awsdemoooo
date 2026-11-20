@@ -8,7 +8,7 @@ import type { ReactNode } from "react";
 const primaryNav = [
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { href: "/station", label: "Station management", icon: MapPin },
-  { href: "/alert", label: "Alerts & notifications", icon: Bell, count: 4 },
+  { href: "/alert", label: "Alerts & notifications", icon: Bell },
 ];
 const detailNav = [
   { key: "dashboard", label: "Dashboard", icon: LayoutDashboard },
@@ -32,10 +32,10 @@ export function AppShell({ children, title }: { children: ReactNode; title?: str
       </Link>
       <div className="side-label">Workspace</div>
       <nav className="nav-list" aria-label="Main navigation">
-        {primaryNav.map(({ href, label, icon: Icon, count }) => {
+        {primaryNav.map(({ href, label, icon: Icon }) => {
           const active = href === "/station" ? pathname.startsWith("/station") : pathname === href || (href === "/dashboard" && pathname === "/");
           return <Link key={href} href={href} className={`nav-link ${active && !stationId ? "active" : ""}`} title={label}>
-            <span className="nav-icon"><Icon size={16} /></span><span className="nav-text">{label}</span>{count && <span className="nav-count">{count}</span>}
+            <span className="nav-icon"><Icon size={16} /></span><span className="nav-text">{label}</span>
           </Link>;
         })}
       </nav>
@@ -45,14 +45,13 @@ export function AppShell({ children, title }: { children: ReactNode; title?: str
           {detailNav.map(({ key, label, icon: Icon }) => {
             const active = pathname === baseStation && key === "dashboard";
             return <Link key={key} href={`${baseStation}${key === "dashboard" ? "" : `?view=${key}`}`} className={`nav-link ${active ? "active" : ""}`} title={label}>
-              <span className="nav-icon"><Icon size={15} /></span><span className="nav-text">{label}</span>{key === "alerts" && <span className="nav-count">2</span>}
+              <span className="nav-icon"><Icon size={15} /></span><span className="nav-text">{label}</span>
             </Link>;
           })}
         </nav>
       </>}
       <div className="sidebar-bottom">
-        <div className="connection-card"><span className="connection-dot"/><div><div className="connection-title">System operational</div><div className="connection-meta">Last synced just now</div></div></div>
-        <div className="user-mini"><div className="avatar">KS</div><div className="user-copy"><div className="user-name">Kei S.</div><div className="user-role">Administrator</div></div></div>
+        <div className="connection-card"><div><div className="connection-title">API data source</div><div className="connection-meta">Status shown on dashboard</div></div></div>
       </div>
     </aside>
     <div className="main-area">
