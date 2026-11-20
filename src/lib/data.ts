@@ -31,6 +31,12 @@ export function formatDate(value: unknown): string {
   return Number.isNaN(date.getTime()) ? value : new Intl.DateTimeFormat("en-GB", { dateStyle: "medium", timeStyle: "short", timeZone: "Asia/Bangkok" }).format(date);
 }
 
+export function formatDateWithSeconds(value: unknown): string {
+  if (typeof value !== "string" || !value) return "Not provided";
+  const date = new Date(value);
+  return Number.isNaN(date.getTime()) ? value : new Intl.DateTimeFormat("en-GB", { dateStyle: "medium", timeStyle: "medium", timeZone: "Asia/Bangkok" }).format(date);
+}
+
 export function pick(object: JsonObject, ...keys: string[]): unknown {
   for (const key of keys) if (object[key] !== undefined) return object[key];
   return undefined;
